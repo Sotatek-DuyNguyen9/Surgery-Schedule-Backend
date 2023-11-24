@@ -5,6 +5,14 @@ module.exports.getAllDoctorMajors = async () => {
   return records;
 };
 
+module.exports.getMajorByDoctorId = async (doctorId) => {
+  const [record] = await db.query(
+    "SELECT * FROM doctor_majors WHERE doctorId = ?",
+    [doctorId]
+  );
+  return record;
+}
+
 module.exports.getDoctorMajorById = async (id) => {
   const [[record]] = await db.query(
     "SELECT * FROM doctor_majors WHERE id = ?",

@@ -9,6 +9,13 @@ router.get("/", async (req, res) => {
   res.send(doctorShifts);
 });
 
+router.get("/doctor/:id", async (req, res) => {
+  const doctorShift = await service.getShiftByDoctorId(req.params.id);
+  if (doctorShift.length == 0) 
+    res.status(404).json("No doctor found with id: " + req.params.id);
+  else res.send(doctorShift);
+});
+
 router.get("/:id", async (req, res) => {
   const doctorShift = await service.getDoctorShiftById(req.params.id);
   if (doctorShift == undefined)

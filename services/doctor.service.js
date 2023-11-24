@@ -1,7 +1,17 @@
 const db = require("../db");
 
+const getFullInfoDoctorQuery = `SELECT doctors.id,
+doctors.name, doctors.major, doctors.phoneNumber, doctors.email,
+GROUP_CONCAT(DISTINCT doctor_shifts.shiftId) AS doctorShift,
+GROUP_CONCAT(DISTINCT doctor_majors.surgeryTypeId) AS doctorMajor,
+doctors.createdAt, doctors.updatedAt
+FROM doctors
+LEFT JOIN doctor_shifts ON doctors.id = doctor_shifts.doctorId
+LEFT JOIN doctor_majors ON doctors.id = doctor_majors.doctorId
+GROUP BY doctors.id`
+
 module.exports.getAllDoctors = async () => {
-  const [records] = await db.query("SELECT * FROM doctors");
+  const [records] = await db.query(getFullInfoDoctorQuery);
   return records;
 };
 

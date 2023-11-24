@@ -5,6 +5,15 @@ module.exports.getAllDoctorShifts = async () => {
   return records;
 };
 
+module.exports.getShiftByDoctorId = async (doctorId) => {
+  const [record] = await db.query(
+    "SELECT doctor_shifts.id, shiftId, doctorId, state, dayInWeek , startDate, endDate " +
+    "FROM doctor_shifts INNER JOIN work_shifts on doctor_shifts.shiftId = work_shifts.id WHERE doctorId = ?",
+    [doctorId]
+  );
+  return record;
+};
+
 module.exports.getDoctorShiftById = async (id) => {
   const [[record]] = await db.query(
     "SELECT * FROM doctor_shifts WHERE id = ?",

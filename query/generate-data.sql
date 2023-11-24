@@ -33,20 +33,20 @@ INSERT INTO surgery_types (name, expectedTime, priority) VALUES ('Phẫu thuật
 INSERT INTO surgery_types (name, expectedTime, priority) VALUES ('Phẫu thuật phổi', 1, 1);
 
 -- work shift
-INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (0, '7:00:00', '12:00:00');
-INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (0, '14:00:00', '18:00:00');
-INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (1, '7:00:00', '12:00:00');
-INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (1, '14:00:00', '18:00:00');
-INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (2, '7:00:00', '12:00:00');
-INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (2, '14:00:00', '18:00:00');
-INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (3, '7:00:00', '12:00:00');
-INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (3, '14:00:00', '18:00:00');
-INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (4, '7:00:00', '12:00:00');
-INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (4, '14:00:00', '18:00:00');
-INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (5, '7:00:00', '12:00:00');
-INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (5, '14:00:00', '18:00:00');
-INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (6, '7:00:00', '12:00:00');
-INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (6, '14:00:00', '18:00:00');
+INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (0, '7', '12');
+INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (0, '14', '18');
+INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (1, '7', '12');
+INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (1, '14', '18');
+INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (2, '7', '12');
+INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (2, '14', '18');
+INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (3, '7', '12');
+INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (3, '14', '18');
+INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (4, '7', '12');
+INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (4, '14', '18');
+INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (5, '7', '12');
+INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (5, '14', '18');
+INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (6, '7', '12');
+INSERT INTO work_shifts (dayInWeek, startDate, endDate) VALUES (6, '14', '18');
 
 -- doctor shift
 INSERT INTO doctor_shifts (doctorId, shiftId, state) VALUES (1, 1, 'active');

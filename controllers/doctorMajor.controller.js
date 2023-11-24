@@ -9,6 +9,13 @@ router.get("/", async (req, res) => {
   res.send(doctorMajors);
 });
 
+router.get("/doctor/:id", async (req, res) => {
+  const doctorMajor = await service.getMajorByDoctorId(req.params.id);
+  if (doctorMajor == undefined)
+    res.status(404).json("No doctor found with id: " + req.params.id);
+  else res.send(doctorMajor);
+});
+
 router.get("/:id", async (req, res) => {
   const doctorMajor = await service.getDoctorMajorById(req.params.id);
   if (doctorMajor == undefined)
